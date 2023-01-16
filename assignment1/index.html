@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice jQuery</title>
+    <script src="jquery.js">
+    </script>
+    <script>
+        window.addEventListener('load', function () {
+            // Problem1
+            $('.welcome').html("<h1>Welcome</h1>")
+            // Problem2
+            $('div:eq(1), div:eq(2)').css('background-color', 'yellow')
+            //Problem3
+            $('#show-message').click(function () {
+                $('.welcome').show(500)
+            })
+            $('#hide-message').click(function () {
+                $('.welcome').hide(500)
+            })
+            //Problem4
+            $('#toggle-message').click(function () {
+                $('.welcome').toggle(500)
+            })
+            //Problem5
+
+            $('#show-name').click(function(){
+                $('#name-label').html("<h1>Tarik Waleed</h1>")
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+    <div class="welcome"></div>
+    <div>
+        div one
+
+    </div>
+    <div>
+        div two
+
+    </div>
+    <button id="show-message">
+        Show
+    </button>
+    <button id="hide-message">
+        Hide
+    </button>
+    <button id="toggle-message">Toggle</button>
+    <br>
+    <br>
+    <br>
+    <div id="name-label"></div>
+
+    <button id="show-name">Show Name</button>
+
+
+</body>
+
+</html>

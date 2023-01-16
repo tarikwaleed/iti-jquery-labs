@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Calculator</title>
+    <script src="jquery.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            $('#add-button').click(function () {
+                var rightOperand = parseInt($('#right-operand').val())
+                var leftOperand = parseInt($('#left-operand').val())
+                var result = leftOperand + rightOperand
+                $('#result-label').text(result)
+            })
+            $('#subtract-button').click(function () {
+                var rightOperand = parseInt($('#right-operand').val())
+                var leftOperand = parseInt($('#left-operand').val())
+                var result = rightOperand - leftOperand
+                $('#result-label').text(result)
+            })
+            $('#multiply-button').click(function () {
+                var rightOperand = parseInt($('#right-operand').val())
+                var leftOperand = parseInt($('#left-operand').val())
+                var result = leftOperand * rightOperand
+                $('#result-label').text(result)
+            })
+            $('#divide-button').click(function () {
+                var rightOperand = parseInt($('#right-operand').val())
+                var leftOperand = parseInt($('#left-operand').val())
+                var result = rightOperand / leftOperand
+                $('#result-label').text(result)
+            })
+
+        })
+
+    </script>
+    <style>
+        button {
+            width: 50px;
+            height: 50px;
+            border-radius: 16px;
+            color: rgb(0, 0, 0);
+            border: none;
+            font-size: 20px;
+        }
+
+        input {
+            border-radius: 16px;
+            width: 50px;
+            font-size: 20px;
+        }
+
+        label {
+            font-size: 100px;
+            color: rgb(133, 133, 133);
+        }
+
+        .container {
+            /* margin-left: 300px;
+            margin-top: 200px; */
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="inputs">
+            <input type="text" id="right-operand">
+            <input type="text" id="left-operand">
+
+        </div>
+        <div class="result">
+            <label for="" id="result-label">0</label>
+        </div>
+
+        <div class="buttons">
+            <button id="add-button" style="background-color:rgb(255, 171, 171);">
+                +
+            </button>
+            <button id="subtract-button" style="background-color:rgb(171, 255, 171);">
+                -
+            </button>
+            <button id="multiply-button" style="background-color:rgb(132, 132, 255);">
+                *
+            </button>
+            <button id="divide-button" style="background-color:rgb(255, 255, 119);">
+                /
+            </button>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
