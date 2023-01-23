@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem1</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="left-container" class="container">
+            <div id="left-card">
+                <ul id="left-list">
+                    <li ">DS</li>
+                    <li ">DB</li>
+                    <li ">OOP</li>
+                    <li ">JS</li>
+                </ul>
+            </div>
+            <button id="arrow-button"> >> </button>
+            <button id="add-button">
+                Add
+            </button>
+            <input type="text">
+
+        </div>
+        <div id="right-container" class="container">
+            <div id="right-card">
+                <ul id="right-list">
+
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+    <script>
+        // this is direct registration, it won't work on future elements
+        // $('li').click(function () {
+        //     $(this).toggleClass('item-hovered')
+        // })
+        $('ul').on('click', 'li', function () {
+            $(this).toggleClass('item-hovered')
+        })
+
+        $('#arrow-button').click(function () {
+            $('li').each(function () {
+                if ($(this).hasClass("item-hovered")) {
+                    $(this).appendTo('#right-list');
+                    $(this).toggleClass('item-hovered')
+                }
+            })
+        })
+        $('#add-button').click(function () {
+            let value = $('input').val()
+            $('#left-list').append(`<li>${value}</li>`)
+        })
+
+
+    </script>
+
+</body>
+
+</html>

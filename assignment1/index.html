@@ -9,7 +9,7 @@
     <script src="jquery.js">
     </script>
     <script>
-        window.addEventListener('load', function () {
+        $(document).ready(function () {
             // Problem1
             $('.welcome').html("<h1>Welcome</h1>")
             // Problem2
@@ -27,10 +27,13 @@
             })
             //Problem5
 
-            $('#show-name').click(function(){
+            $('#show-name').click(function () {
                 $('#name-label').html("<h1>Tarik Waleed</h1>")
             })
+
         })
+        // window.addEventListener('load', function () {
+        // })
 
     </script>
 </head>
