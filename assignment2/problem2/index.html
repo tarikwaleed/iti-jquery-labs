@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem2</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+</head>
+
+<body>
+    <table id="rows-table">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Grade</th>
+    </table>
+    <button id="show-button">Show
+    </button>
+    <script>
+        $('#show-button').click(async function (param) {
+            $.ajax({
+                url: 'rows.js',
+                method: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    let table = $(`
+                        <table>
+                            <tr>
+                                <td>ID</td>
+                                <td>Name</td>
+                                <td>Grade</td>
+                            </tr>
+                        </table>
+                        `)
+                    for (let obj of data) {
+                        let rows = $(`
+                                <tr>
+                                    <td>${obj.ID}</td>
+                                    <td>${obj.studentName}</td>
+                                    <td>${obj.grade}</td>
+                                </tr>
+                            `)
+                        table.append(rows)
+                    }
+                    $('div').html(table)
+                },
+                error: function () {
+                    console.error();
+                }
+            })
+
+
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>
